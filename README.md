@@ -1,7 +1,10 @@
 # thsht
 
-Tools for working with Touhou 15 (`TH15`) `.sht` files.
+Tools for working with Touhou game series's `.sht` files.
+This is a WIP project and currently only designed for `Th15`.
+At the current stage, the code is a mostly AI made.
 
+The current tool does: 
 - Lossless dump/build (byte-identical roundtrips) with optional overlays
 - Extract option positions and 88-byte shot records to JSON
 - Parse and summarize 88-byte records by level
@@ -11,11 +14,9 @@ See `USAGE.md` for detailed examples and JSON formats.
 
 ## Installation
 
-- Local install for development: `pip install -e .`
-- Regular install: `pip install .`
-- Build distributions: `python -m build` (requires `pip install build`)
-
 Python 3.8+ is required. No external dependencies (stdlib only).
+
+Just download the repository and you can run the `.py` files directly.
 
 ## Quick Start
 
