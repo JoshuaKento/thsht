@@ -1,14 +1,12 @@
 # thsht
 
-Tools for working with Touhou game series's `.sht` files.
-This is a WIP project and currently only designed for `Th15`.
-At the current stage, the code is a mostly AI made.
+Tools for working with Touhou game series `.sht` files.
+This is a WIP project and currently focused on TH15. Much of the code was bootstrapped with AI assistance.
 
-The current tool does: 
+The current tool does:
 - Lossless dump/build (byte-identical roundtrips) with optional overlays
 - Extract option positions and 88-byte shot records to JSON
 - Parse and summarize 88-byte records by level
-- Pattern-based extraction of candidate 88-byte chunks from `pl01.sht`
 
 See `USAGE.md` for detailed examples and JSON formats.
 
@@ -16,7 +14,7 @@ See `USAGE.md` for detailed examples and JSON formats.
 
 Python 3.8+ is required. No external dependencies (stdlib only).
 
-Just download the repository and you can run the `.py` files directly.
+Just download the repository and you can run the `.py` files directly, or install the package to get console scripts.
 
 ## Quick Start
 
@@ -25,7 +23,6 @@ Just download the repository and you can run the `.py` files directly.
 - Repack identically: `thsht-sht-lossless repack pl01.sht pl01.copy.sht`
 - Extract human-friendly JSON: `thsht-extract-json -p pl01.sht`
 - Parse 88-byte levels: `thsht-parse-88-levels` (writes `*_88levels.txt`)
-- pl01 pattern chunks: `thsht-extract-pl01-88-chunks` (writes markdown table)
 
 ## Command Line Tools
 
@@ -33,7 +30,6 @@ Just download the repository and you can run the `.py` files directly.
   - `dump` / `dumpx` / `dumpu`, `build`, `repack` (see `USAGE.md`)
 - `thsht-extract-json` — extracts option positions and 88-byte records
 - `thsht-parse-88-levels` — summarizes 88-byte records per level
-- `thsht-extract-pl01-88-chunks` — pattern-based scan for `pl01.sht`
 
 ## Python API
 
@@ -44,3 +40,4 @@ Just download the repository and you can run the `.py` files directly.
 
 - Only TH15 is supported by the packer. The extractor focuses on TH15 `pl0x.sht` layouts.
 - Overlay precedence when building: `tail_raw` > `tail` > convenience fields (`option_num`, `bullet_ai`), and `f6` > individual float fields (`y_off`, `x_sp`, `size`, `ang`, `spd`). Details in `USAGE.md`.
+
